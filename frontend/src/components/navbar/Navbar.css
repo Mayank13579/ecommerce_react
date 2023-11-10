@@ -1,0 +1,40 @@
+.main{
+    display: flex;
+    justify-content: space-around;
+    }
+    .sub-section {
+      display: flex;
+      justify-content: space-around;
+      list-style:none;
+    }
+    .sub-section li{
+      padding: 2rem;
+      display: flex;
+    
+    }
+    .login {
+      padding: 2rem;
+      display: flex;
+      gap:25px;
+    }
+    .login-btn {
+      margin: 10px;
+    }
+    
+    .login-btn :active{
+    background-color:grey ;
+    }
+    /* .nav-cart-count{
+      wodth:22px;
+      height:22px;
+      display:flex;
+      justify-content: centre;
+      align-items: center;
+      margin-top: -35px;
+      margin-left: -55px;
+      border-radius: 11px;
+      font-size: 14px;
+      background: red;
+      color: white;
+    } */
+    
