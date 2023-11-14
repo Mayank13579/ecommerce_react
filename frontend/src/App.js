@@ -8,9 +8,10 @@ import LoginSignup from './pages/LoginSignup'
 import ShopCategory from './pages/ShopCategory'
 import Product from './pages/Product'
 import Footer from './components/footer/Footer'
-import men_banner from '../src/assets/banner_women.jpg'
+import men_banner from '../src/assets/banner_mens.png'
 import women_banner from '../src/assets/banner_women.jpg'
-import kid_banner from '../src/assets/banner_women.jpg'
+import kid_banner from '../src/assets/banner_kids.png'
+
 function App() {
   return (
     <>
