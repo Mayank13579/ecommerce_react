@@ -1,14 +1,16 @@
 import React ,{useContext} from 'react';
 // import {ShopContext}  from '../Context/ShopContext';
 import {useParams} from 'react-router-dom';
-import all_product from '../assets/all_product';
 import Breadcrum from '../components/Breadcrums/Breadcrum'
 import ShopContextProvider from '../Context/ShopContext';
 import ProductDisplay from '../components/productDisplay/ProductDisplay';
+
 const Product = () => {
     const {all_product}=useContext(ShopContextProvider);
     const {productId}=useParams();
+  
     const product=all_product.find((e)=>e.id===Number(productId));
+    console.log('knfe');
 
   return (
     <div>

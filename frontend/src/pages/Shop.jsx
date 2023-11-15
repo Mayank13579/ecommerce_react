@@ -5,6 +5,8 @@ import Popular from '../components/Popular/Popular'
 import NewCollections from '../components/newcollections/NewCollections'
 import NewsLetter from '../components/newsletter/NewsLetter'
 const Shop = () => {
+ 
+
   return (
     <div>
     <Hero/>
