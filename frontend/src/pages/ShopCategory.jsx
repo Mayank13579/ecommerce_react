@@ -6,9 +6,7 @@ import Item from '../components/item/item.jsx'
 // import all_product from '../assets/all_product.js'
 
 const ShopCategory = (props) => {
-
   const {all_product}=useContext(ShopContext);
-
   return (
     <div className="shop-category">
       

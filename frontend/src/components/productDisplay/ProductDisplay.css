@@ -12,11 +12,11 @@
     gap: 16px;
 }
 
-.productdisplay-img-list-img{
-    height: 163px;
+.productdisplay-img-list img{
+    height: 135px;
 }
 .productdisplay-main-img{
-    width: 586px;
+    width: 500px;
 }
 .productdisplay-right{
     margin: 0px 70px;
