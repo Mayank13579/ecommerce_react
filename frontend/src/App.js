@@ -9,7 +9,7 @@ import ShopCategory from './pages/ShopCategory'
 import Product from './pages/Product'
 import Footer from './components/footer/Footer'
 import men_banner from '../src/assets/banner_mens.png'
-import women_banner from '../src/assets/banner_women.jpg'
+import women_banner from '../src/assets/banner_women.png'
 import kid_banner from '../src/assets/banner_kids.png'
 import ShopContextProvider from './Context/ShopContext';
 function App() {
