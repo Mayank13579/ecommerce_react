@@ -1,67 +1,87 @@
-.loginsignup{
-    width: 100%;
-    height: 80vh;
-    background: #fce3fe;
-    padding-top: 100px;
+/* LoginSignup.css */
 
-}
-.loginsignup-container{
-    width:580px;
-    height: 500px;
-    background: white;
-    margin: auto;
-    padding: 40px 60px;
-}
-.loginsignup-container h1{
-    margin: 20px 0px;
-}
-
-.loginsignup-fields{
-    display: flex;
-    flex-direction: column;
-    gap: 29px;
-    margin-top:30px;
-}
-.loginsignup-fields input{
-    height: 72px;
-    width: 100%;
-    padding-left: 20px;
-    border: 1px solid #c9c9c9;
-    outline: none;
-    color: #5c5c5c;
-    font-size: 18px;
-}
-
-.loginsignup-container button{
-    width: 580px;
-    height: 72px;
-    color:white;
-    background:#ff4141;
-    margin-top:30px;
-    border: none;
-    font-size: 24px;
-    font-weight: 500;
-    cursor:pointer;
-}
-
-.loginsignup-login{
-    margin-top: 20px;
-    color: #5c5c5c;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.loginsignup-login span{
-    color: #ff4141;
-    font-weight: 600;
-}
-
-.loginsignup-agree{
+.loginsignup {
     display: flex;
     align-items: center;
-    margin-top: 25px;
-    gap: 20px;
-    color: #5c5c5c;
-    font-size: 18px;
-    font-weight: 500;
-}
+    justify-content: center;
+    height: 100vh;
+    background-color: #3498db; /* Background color */
+  }
+  
+  .loginsignup-container {
+    background-color: #ffffff; /* Container background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .loginsignup h1 {
+    text-align: center;
+    color: #e74c3c; /* Header text color */
+  }
+  
+  .loginsignup-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .loginsignup-fields {
+    margin-bottom: 20px;
+  }
+  
+  .loginsignup-fields input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #3498db; /* Input border color */
+    border-radius: 4px;
+  }
+  
+  .loginsignup-button {
+    background-color: #2ecc71; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .loginsignup-button:hover {
+    background-color: #27ae60; /* Button hover background color */
+  }
+  
+  .loginsignup-login {
+    text-align: center;
+    margin-top: 10px;
+    color: #ecf0f1; /* Login text color */
+  }
+  
+  .loginsignup-login span {
+    color: #f39c12; /* Link color */
+    cursor: pointer;
+  }
+  
+  .loginsignup-agree {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: #ecf0f1; /* Agree text color */
+  }
+  
+  .loginsignup-agree input {
+    margin-right: 5px;
+  }
+  
+  .loginsignup-agree p {
+    font-size: 14px;
+  }
+  
+  .loginsignup-toggle {
+    text-align: center;
+    color: #3498db; /* Toggle text color */
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .shift-btn{
+    color: #e74c3c;
+  }
