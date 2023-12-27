@@ -1,8 +1,12 @@
-import {auth} from '../firebase/firebase';
+import {auth,firestore} from '../firebase/firebase';
 import React, { useState } from 'react';
 import '../pages/CSS/LoginSignup.css'
+import { useNavigate } from 'react-router-dom';
+import { GoogleAuthProvider }  from 'firebase/auth';
 
 const LoginForm = ({ onToggleForm }) => {
+  const navigate = useNavigate();
+
   const [loginData, setLoginData] = useState({
     email: '',
     password: '',
@@ -17,16 +21,36 @@ const LoginForm = ({ onToggleForm }) => {
   };
 
   const handleLoginSubmit = async (e) => {
+
     e.preventDefault();
     try {
+      
       await auth.signInWithEmailAndPassword(loginData.email, loginData.password);
-      console.log('Login successful!');
+      window.alert('Login successful!');
+      navigate('/');
+
     } catch (error) {
-      console.error('Login failed:', error.message);
+      console.error('Login failed:', error);
+      window.alert("wrong email or password");
+
     }
   };
 
-  return (
+  const handleGoogleLogin=async (e)=>{
+    e.preventDefault();
+    try{
+      const userCredential= await auth.signInWithPopup(new GoogleAuthProvider());
+      console.log('google sign-in successful',userCredential.user);
+      navigate('/');
+    }
+    catch (error) {
+      console.error('Login failed:', error);
+      window.alert("wrong email or password");
+
+    }
+  }
+
+  return (<>
     <form onSubmit={handleLoginSubmit}>
       <input
         type="text"
@@ -45,41 +69,73 @@ const LoginForm = ({ onToggleForm }) => {
       />
       <br />
       <button type="submit">Login</button>
-      <p>Need an account?<span className='shift-btn' onClick={onToggleForm}>Sign up </span> here.</p>
     </form>
+
+    <h1>OR</h1>
+      <button onClick={handleGoogleLogin}>Login with Google</button>
+      <br />
+    <p>Need an account?<span className='shift-btn' onClick={onToggleForm}>Sign up </span> here.</p>
+
+  </>
+    
+
   );
 };
 
 const SignupForm = ({ onToggleForm }) => {
+  const Navigate = useNavigate();
   const [signupData, setSignupData] = useState({
     name: '',
     email: '',
     password: '',
   });
-
+  
   
   const handleSignupChange = (e) => {
     const { name, value } = e.target;
-    // console.log(e)
-
     setSignupData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
+ 
+
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
-    // Add your signup logic here using signupData
     try {
       await auth.createUserWithEmailAndPassword(signupData.email, signupData.password);
       console.log('Signup successful!');
+      Navigate('/');
     } catch (error) {
       console.error('Signup failed:', error.message);
+      window.alert("wrong id or password");
+      Navigate('/login');
+
     }
-    // console.log('Signup submitted:', signupData);
   };
 
+  const handleGoogleSubmit=async (e)=>{
+    e.preventDefault();
+    try{
+      const userCredential= await auth.signInWithPopup(new GoogleAuthProvider());
+      await firestore.collection('users').doc(userCredential.user.uid).set({
+        name: signupData.name,
+        email: signupData.email,
+        // Add more fields as needed
+      });
+     console.log('google sign-in successful',userCredential.user);
+      Navigate('/');
+    }
+    catch (error) {
+      console.error('Signup failed:', error);
+      window.alert("wrong id or password")
+      Navigate('/login');
+    }
+  }
+
   return (
+    <>
+
     <form onSubmit={handleSignupSubmit}>
       <input
         type="text"
@@ -97,14 +153,22 @@ const SignupForm = ({ onToggleForm }) => {
       /> <br />
       <input
         type="password"
-        placeholder="Password"
+        placeholder="Password (atleast 6)"
         name="password"
         value={signupData.password}
         onChange={handleSignupChange}
       /> <br />
       <button type="submit">Sign Up</button>
-      <p>Already have an account? <span className='shift-btn' onClick={onToggleForm}>Login here.</span> </p>
     </form>
+
+    <br />
+    <h1>OR</h1>
+    <button type="submit" onClick={handleGoogleSubmit}>Signup with google</button>
+    <br />
+    <p>Already have an account? <span className='shift-btn' onClick={onToggleForm}>Login here.</span> </p>
+
+    </>
+    
   );
 };
 

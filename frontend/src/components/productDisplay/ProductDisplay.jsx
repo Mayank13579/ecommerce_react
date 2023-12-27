@@ -1,15 +1,26 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import '../productDisplay/ProductDisplay.css'
 import star_icon  from '../../assets/star_icon.png'
 import star_dull_icon from '../../assets/star_dull_icon.png'
 import { ShopContext } from '../../Context/ShopContext'
+import CartItems from '../CartItems/CartItems'
 
 const ProductDisplay = (props) => {
     const {product}=props;
     const {addToCart}=useContext(ShopContext);
-
+    const [selectedSize,setselectedSize]=useState(null);
+    const datatopass=selectedSize;
+    // console.log(datatopass);
+    const sizechange=(e)=>{
+        setselectedSize(e.target.value)
+    }
+    
 
   return (
+  <>
+    <div>    
+        <CartItems passdata={datatopass}/>
+    </div>
         <div className="productdisplay">
             <div className="productdisplay-left">
                 <div className="productdisplay-img-list">
@@ -43,20 +54,72 @@ const ProductDisplay = (props) => {
                 <div className="productdisplay-right-size">
                     <h1>select size</h1>
                     <div className="productdisplay-right-size">
-                        <div>S</div>
-                        <div>M</div>
-                        <div>L</div>
-                        <div>XL</div>
-                        <div>XLL</div>
+                    <label>
+        <input
+          type="radio"
+          name="size"
+          value="S"
+          checked={selectedSize === 'S'}
+          onChange={sizechange}
+        />
+        S
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          name="size"
+          value="M"
+          checked={selectedSize === 'M'}
+          onChange={sizechange}
+        />
+        M
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          name="size"
+          value="L"
+          checked={selectedSize === 'L'}
+          onChange={sizechange}
+        />
+        L
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          name="size"
+          value="XL"
+          checked={selectedSize === 'XL'}
+          onChange={sizechange}
+        />
+        XL
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          name="size"
+          value="XXL"
+          checked={selectedSize === 'XXL'}
+          onChange={sizechange}
+        />
+        XXL
+      </label>
+      {/* <p>size selected  {selectedSize}</p> */}
                     </div>
+
                 </div>
-                <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
+                <button onClick={()=>{addToCart(product.id)}}>ADD TO Cart</button>
                 <p className='productdisplay-right-category'><span>category:</span>women,t-shirt,crop top</p>
                 <p className='productdisplay-right-category'><span>tags:</span>modern,latest</p>
 
             </div>
         </div>
-    )
+        </>
+        )
 }
 
 export default ProductDisplay

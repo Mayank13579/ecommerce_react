@@ -12,6 +12,7 @@ import men_banner from '../src/assets/banner_mens.png'
 import women_banner from '../src/assets/banner_women.png'
 import kid_banner from '../src/assets/banner_kids.png'
 import ShopContextProvider from './Context/ShopContext';
+import UserProfile from './pages/userProfile';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
     </Route>
     <Route path='/cart' element={<Cart/>}/>
     <Route path='/login' element={<LoginSignup/>}/>
+    <Route path='user' element={<UserProfile/>}/>
     </Routes>
     <Footer/>
     </ShopContextProvider>

@@ -1,8 +1,8 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
+import "firebase/compat/firestore";
 
-// TODO: Replace the following with your app's Firebase project configuration
-// See: https://firebase.google.com/docs/web/learn-more#config-object
+
 const firebaseConfig = {
 
   apiKey: "AIzaSyBXgx9ihV7BeLFwEhleH0gThSRYD9crkBc",
@@ -14,7 +14,7 @@ const firebaseConfig = {
     measurementId: "G-5YQFMCCZQK"
   // ...
 };
-console.log('Firebase Configuration:', firebaseConfig);
+// console.log('Firebase Configuration:', firebaseConfig);
 // ... other logging statements
 
 // Initialize Firebase
@@ -23,3 +23,4 @@ firebase.initializeApp(firebaseConfig);
 
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = firebase.auth();
+export const firestore =firebase.firestore();
