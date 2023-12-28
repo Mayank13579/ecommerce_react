@@ -19,6 +19,8 @@
     }
     .login-btn {
       margin: 10px;
+      height: 30px;
+      width: 45px;
     }
     
     .login-btn :active{

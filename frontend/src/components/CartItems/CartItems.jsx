@@ -3,6 +3,8 @@ import './CartItems.css'
 // import product from '../productDisplay/ProductDisplay'
 import { ShopContext } from '../../Context/ShopContext';
 import remove_icon from '../../assets/cart_cross_icon.png'
+import {Link} from 'react-router-dom'
+
 
 const CartItems = (props) => {
 
@@ -59,7 +61,7 @@ const CartItems = (props) => {
                         <h3>${getTotalCartAmount()}</h3>
                     </div>
                     </div>
-                    <button>PROCEED TO CHECKOUT</button>
+                    <button><Link to='/checkout'>PROCEED TO CHECKOUT</Link></button>
             </div>
             <div className="cartitems-promocode">
                 <p>if you have a promo code , enter it here</p>

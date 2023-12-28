@@ -1,4 +1,5 @@
 import {auth,firestore} from '../firebase/firebase';
+import { getDoc, setDoc, doc } from 'firebase/firestore';
 import React, { useState } from 'react';
 import '../pages/CSS/LoginSignup.css'
 import { useNavigate } from 'react-router-dom';
@@ -25,7 +26,13 @@ const LoginForm = ({ onToggleForm }) => {
     e.preventDefault();
     try {
       
-      await auth.signInWithEmailAndPassword(loginData.email, loginData.password);
+      const userCredential = await auth.signInWithEmailAndPassword(loginData.email, loginData.password);
+
+      // You can fetch user data from Firestore if needed
+      
+        const userDoc = await getDoc(doc(firestore, 'users', userCredential.user.uid));
+        // console.log(userDoc);
+      const userData  = userDoc.data();      
       window.alert('Login successful!');
       navigate('/');
 
@@ -77,8 +84,6 @@ const LoginForm = ({ onToggleForm }) => {
     <p>Need an account?<span className='shift-btn' onClick={onToggleForm}>Sign up </span> here.</p>
 
   </>
-    
-
   );
 };
 
@@ -88,9 +93,9 @@ const SignupForm = ({ onToggleForm }) => {
     name: '',
     email: '',
     password: '',
+    age:'',
+    gender:''
   });
-  
-  
   const handleSignupChange = (e) => {
     const { name, value } = e.target;
     setSignupData((prevData) => ({
@@ -103,7 +108,17 @@ const SignupForm = ({ onToggleForm }) => {
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
     try {
-      await auth.createUserWithEmailAndPassword(signupData.email, signupData.password);
+      const userCredential = await auth.createUserWithEmailAndPassword(signupData.email, signupData.password);
+
+    // Save user data to Firestore
+    await setDoc(doc(firestore, 'users', userCredential.user.uid), {
+      name: signupData.name,
+      email: signupData.email,
+      age:signupData.age,
+      gender: signupData.gender
+    });
+   
+
       console.log('Signup successful!');
       Navigate('/');
     } catch (error) {
@@ -118,10 +133,9 @@ const SignupForm = ({ onToggleForm }) => {
     e.preventDefault();
     try{
       const userCredential= await auth.signInWithPopup(new GoogleAuthProvider());
-      await firestore.collection('users').doc(userCredential.user.uid).set({
+      await setDoc(doc(firestore, 'users', userCredential.user.uid), {
         name: signupData.name,
         email: signupData.email,
-        // Add more fields as needed
       });
      console.log('google sign-in successful',userCredential.user);
       Navigate('/');
@@ -157,7 +171,23 @@ const SignupForm = ({ onToggleForm }) => {
         name="password"
         value={signupData.password}
         onChange={handleSignupChange}
+      /> 
+      <br />
+      <input
+        type="text"
+        placeholder="Age"
+        name="age"
+        value={signupData.age}
+        onChange={handleSignupChange}
       /> <br />
+      <input
+        type="text"
+        placeholder="gender"
+        name="gender"
+        value={signupData.gender}
+        onChange={handleSignupChange}
+      /> <br />
+
       <button type="submit">Sign Up</button>
     </form>
 
