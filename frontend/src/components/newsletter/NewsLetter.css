@@ -1,51 +1,57 @@
-.newsletter{
-    width: 65%;
-    height: 40vh;
+.newsletter {
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: auto;
-    padding: 0px 140px;
-    margin-bottom: 150px;
-    background: linear-gradient(180deg, #fde1ff 0%,#e1ffea22 60% );
-    gap: 30px;
+    padding: 20px; /* Adjust padding for better spacing on smaller screens */
+    margin-bottom: 50px; /* Adjust margin for better spacing on smaller screens */
+    background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+    gap: 15px; /* Adjust gap between elements for better spacing on smaller screens */
 }
-.newsletter h1{
+
+.newsletter h1 {
     color: #454545;
-    font-size: 55px;
+    font-size: 40px; /* Adjust font size for smaller screens */
     font-weight: 600;
 }
-.newsletter p{
+
+.newsletter p {
     color: #454545;
-    font-size: 20px;
+    font-size: 16px; /* Adjust font size for smaller screens */
 }
-.newsletter div{
+
+.newsletter div {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Adjust layout to separate input and button */
     background: white;
-    width: 730px;
-    height: 70px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
     border: 1px solid #e3e3e3;
-    border-radius: 80px
-
+    border-radius: 40px;
+    padding: 15px;
 }
 
-.newsletter input{
-    width: 500px;
-    margin-left: 30px;
+.newsletter input {
+    flex: 1; /* Allow the input to take up remaining space */
+    margin-right: 15px; /* Add right margin for spacing between input and button */
     border: none;
     outline: none;
     color: #616161;
-    font-size: 16px;
+    font-size: 14px;
 }
-.newsletter div button{
-    width: 210px;
-    height: 70px;
-    border-radius: 80px;
+
+.newsletter div button {
+    width: 150px; /* Adjust button width as needed */
+    height: 50px;
+    border-radius: 40px;
     background: black;
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
 }
+

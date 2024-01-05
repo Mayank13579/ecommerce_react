@@ -61,7 +61,6 @@ const CartItems = (props) => {
                         <h3>${getTotalCartAmount()}</h3>
                     </div>
                     </div>
-                    <button><Link to='/checkout'>PROCEED TO CHECKOUT</Link></button>
             </div>
             <div className="cartitems-promocode">
                 <p>if you have a promo code , enter it here</p>
@@ -70,6 +69,9 @@ const CartItems = (props) => {
                     <button>Submit</button>
                 </div>
             </div>
+            
+            <button><Link to='/checkout'>PROCEED TO CHECKOUT</Link></button>
+
         </div>
 
     </div>

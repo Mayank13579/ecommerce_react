@@ -1,52 +1,59 @@
-.offers{
-    width: 65%;
-    height: 60vh;
+.offers {
+    width: 100%;
+    height: auto;
     display: flex;
+    flex-direction: column;
     margin: auto;
-    padding: 0px 140px;
-    margin-bottom: 150px;
-    background: linear-gradient(180deg,#fde1ff,#e1ffea22 60%);
+    padding: 20px; /* Adjust padding for better spacing on smaller screens */
+    margin-bottom: 50px; /* Adjust margin for better spacing on smaller screens */
+    background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
 }
-.offers-left{
+
+.offers-left {
     flex: 1;
     display: flex;
-    flex-direction: column ;
+    flex-direction: column;
     justify-content: center;
 }
 
-.offers-left h1{
+.offers-left h1 {
     color: #171717;
-    font-size: 80px;
+    font-size: 40px; /* Adjust font size for smaller screens */
     font-weight: 600;
 }
-.offers-left p{
+
+.offers-left p {
     color: #171717;
-    font-size: 22px;
+    font-size: 16px; /* Adjust font size for smaller screens */
     font-weight: 600;
 }
+
 .offers-left button {
-    width: 282px;
-    height: 70px;
-    border-radius: 35px;
-    background:#ff4141 ;
+    width: 100%;
+    max-width: 140px; /* Set a maximum width for the button */
+    margin-bottom: 20px;
+    height: 50px;
+    border-radius: 25px;
+    background: #ff4141;
     border: none;
     color: white;
-    font-size: 22px;
+    font-size: 18px; /* Adjust font size for smaller screens */
     font-weight: 500;
-    margin-top: 30px;
+    margin-top: 20px; /* Adjust top margin for better spacing on smaller screens */
     cursor: pointer;
 }
 
-.offers-right{
+.offers-right {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-top: 50px;
 }
-.offers-right img{
-    /* display: flex; */
-    height: 50vh;
-    /* margin-left: 30px; */
-    /* justify-content: flex-end; */
+
+.offers-right img {
+    height: 30rem;
+    width: auto;
+    padding-right: 15%;
+    max-height: 50vh; /* Set a maximum height to avoid stretching on larger screens */
+
 }

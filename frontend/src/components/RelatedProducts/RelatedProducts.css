@@ -1,27 +1,47 @@
-.relatedproducts{
+.relatedproducts {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    height: 90vh;
+    height: auto; /* Allow the container to grow as needed on smaller screens */
+    margin: 20px 0; /* Adjust margin for better spacing on smaller screens */
 }
 
-.relatedproducts h1{
+.relatedproducts h1 {
     color: #171717;
-    font-size:50px;
+    font-size: 40px; /* Adjust font size for smaller screens */
     font-weight: 600;
-
 }
 
-.relatedproducts hr{
-    width: 200px;
-    height: 6px;
-    border-radius: 10px;
-    background:#252525;
+.relatedproducts hr {
+    width: 150px; /* Adjust width for smaller screens */
+    height: 4px; /* Adjust height for smaller screens */
+    border-radius: 8px; /* Adjust border-radius for smaller screens */
+    background: #252525;
 }
 
-.relatedproducts-item{
-    margin-top:50px ;
+.relatedproducts-item {
+    margin-top: 30px; /* Adjust top margin for better spacing on smaller screens */
     display: flex;
-    gap: 30px;
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    gap: 20px; /* Adjust gap between items for smaller screens */
+    justify-content: center; /* Center items horizontally */
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .relatedproducts h1 {
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
+
+    .relatedproducts hr {
+        width: 100px; /* Adjust width for smaller screens */
+        height: 3px; /* Adjust height for smaller screens */
+        border-radius: 6px; /* Adjust border-radius for smaller screens */
+    }
+
+    .relatedproducts-item {
+        margin-top: 20px; /* Adjust top margin for better spacing on smaller screens */
+        gap: 10px; /* Adjust gap between items for smaller screens */
+    }
 }

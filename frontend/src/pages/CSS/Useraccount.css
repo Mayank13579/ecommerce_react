@@ -1,9 +1,13 @@
-.main-div{
-  background-color:rgb(63, 63, 112);
+.user-account-container {
+  padding: 20px;
+}
+
+.main-div {
+  background-color: rgb(63, 63, 112);
   display: grid;
-  height: 20rem;
-  
-  
+  gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 h2 {
@@ -13,7 +17,7 @@ h2 {
 
 p {
   margin: 10px 0;
-  color: #555;
+  color: #fff; /* Changed text color to white */
   text-align: center;
 }
 
@@ -21,4 +25,11 @@ p {
   font-style: italic;
   text-align: center;
   color: #888;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .main-div {
+    grid-template-columns: 1fr; /* Change to a single column on smaller screens */
+  }
 }

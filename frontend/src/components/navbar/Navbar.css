@@ -1,47 +1,68 @@
-.main{
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: auto;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.heading h1 {
+    margin-left: 1rem;
+}
+
+.sub-section {
     display: flex;
     justify-content: space-around;
-    }
-    .sub-section {
-      display: flex;
-      justify-content: space-around;
-      list-style:none;
-    }
-    .sub-section li{
-      padding: 2rem;
-      display: flex;
-    
-    }
-    .login {
-      padding: 2rem;
-      display: flex;
-      gap:25px;
-    }
-    .login-btn {
-      margin: 10px;
-      height: 30px;
-      width: 45px;
-    }
-    
-    .login-btn :active{
-    background-color:grey ;
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+}
+
+.sub-section li {
+    padding: 1rem;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 1rem;
+}
+
+.login-btn {
+    height: 30px;
+    width: 80px;
+}
+
+.sub-section li a {
+    text-decoration: none;
+    color: rgb(63, 63, 105);
+}
+
+/* Media query for screens wider than 768px */
+@media only screen and (min-width: 768px) {
+    .main {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
     }
 
-    .sub-section li a{
-      text-decoration:none;
-      color:rgb(63, 63, 105);
+    .sub-section {
+        flex: 1;
+        justify-content: flex-start;
     }
-    /* .nav-cart-count{
-      wodth:22px;
-      height:22px;
-      display:flex;
-      justify-content: centre;
-      align-items: center;
-      margin-top: -35px;
-      margin-left: -55px;
-      border-radius: 11px;
-      font-size: 14px;
-      background: red;
-      color: white;
-    } */
-    
+
+    .login {
+        flex: 1;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}

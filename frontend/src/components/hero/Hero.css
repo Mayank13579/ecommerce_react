@@ -1,56 +1,59 @@
-.hero{
+.hero {
     height: 70vh;
-    background: linear-gradient(180deg,#fde1ff,#e1ffea22 60%);
+    background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
     display: flex;
-
+    flex-direction: column; /* Change to column layout for smaller screens */
+    margin-bottom: 100px; /*s */
 }
-.hero-left{
+
+.hero-left {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    padding-left: 180px;
+    padding: 20px; /* Adjust padding for better spacing on smaller screens */
+    text-align: center; /* Center text for smaller screens */
     line-height: 1.1;
 }
 
-.hero-left h2{
-    color:#090909;
-    font-size: 26px;
-font-weight: 600;
+.hero-left p {
+    font-size: 32px; /* Adjust font size for better readability on smaller screens */
+    position: relative;
 }
-.hero-left p{
-    color:#090909;
-    font-size: 50px;
-    font-weight: 700;
-}
-.hero-hand-icon{
+
+.hero-hand-icon {
     display: flex;
-    
+    justify-content: center; /* Center the hand icon for smaller screens */
     align-items: center;
     gap: 20px;
 }
-
 .hero-hand-icon img{
-    width: 70px;
+    height: 5vh;
 }
-.hero-latest-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    width: 310px;
+.hero-latest-btn {
+    width: 100%; /* Adjust width to fill the container */
+    max-width: 310px; /* Set a maximum width for larger screens */
     height: 70px;
     border-radius: 75px;
-    margin-top: 30px;
-    color: white;
-    font-size: 22px;
-    font-weight: 500;
+    margin-top: 20px; /* Adjust margin for better spacing on smaller screens */
 }
-.hero-right{
-    flex:1;
+
+.hero-right {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Media query for screens wider than 768px */
+@media only screen and (min-width: 768px) {
+    .hero {
+        flex-direction: row; /* Change back to row layout for larger screens */
+    }
+
+    .hero-left {
+        padding: 0 40px; /* Adjust padding for better spacing on larger screens */
+        text-align: left; /* Align text to the left for larger screens */
+    }
+}
