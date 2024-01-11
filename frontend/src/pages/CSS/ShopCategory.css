@@ -3,6 +3,11 @@
     margin:30px auto ;
     width: 82%;
 }
+
+.shopcategory-products img{
+    height: 200px;
+    width: auto;
+}
 .shopcategory-indexSort{
     display: flex;
     margin: 0px 170px;

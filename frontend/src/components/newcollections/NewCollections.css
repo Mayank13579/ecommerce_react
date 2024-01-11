@@ -4,16 +4,25 @@
     gap: 10px;
     margin-bottom: 50px; /* Adjust bottom margin for better spacing on smaller screens */
     padding: 0 20px; /* Adjust padding for better spacing on smaller screens */
+    align-items: center; /* Center items horizontally within the container */
 }
+
+.new-collections .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .new-collections .collections {
     display: grid;
     grid-template-columns: repeat(1, 1fr); /* Default: 1 column for smaller screens */
     gap: 20px;
     justify-content: space-between;
 }
-.new-collections .collections img{
+
+.new-collections .collections img {
     height: 220px;
-    width:auto;
+    width: auto;
 }
 
 /* Media query for screens wider than 768px */

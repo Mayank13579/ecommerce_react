@@ -7,8 +7,11 @@ import Item from  '../item/item.jsx'
 const NewCollections=()=>{
     return (
         <div className="new-collections">
+            <div className="heading">
             <h1>NEW COLLECTIONS</h1>
             <hr />
+            </div>
+            
             <div className="collections">
                 {new_collection.map((item,i)=>{
                     return <Item 
