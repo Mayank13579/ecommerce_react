@@ -9,11 +9,9 @@ const UserAccount = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Get the currently logged-in user
         const user = auth.currentUser;
 
         if (user) {
-          // Fetch user data from Firestore based on UID
           const userDoc = await getDoc(doc(firestore, 'users', user.uid));
 
           if (userDoc.exists()) {

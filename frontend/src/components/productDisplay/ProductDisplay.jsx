@@ -18,9 +18,9 @@ const ProductDisplay = (props) => {
 
   return (
   <>
-    <div>    
+    {/* <div>    
         <CartItems passdata={datatopass}/>
-    </div>
+    </div> */}
         <div className="productdisplay">
             <div className="productdisplay-left">
                 <div className="productdisplay-img-list">
@@ -111,8 +111,8 @@ const ProductDisplay = (props) => {
       {/* <p>size selected  {selectedSize}</p> */}
                     </div>
 
-                </div>
-                <button onClick={()=>{addToCart(product.id)}}>ADD TO Cart</button>
+                </div >
+                <button className="addtocart-btn" onClick={()=>{addToCart(product.id)}}>ADD TO Cart</button>
                 <p className='productdisplay-right-category'><span>category:</span>women,t-shirt,crop top</p>
                 <p className='productdisplay-right-category'><span>tags:</span>modern,latest</p>
 

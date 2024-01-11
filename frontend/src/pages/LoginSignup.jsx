@@ -27,12 +27,7 @@ const LoginForm = ({ onToggleForm }) => {
     try {
       
       const userCredential = await auth.signInWithEmailAndPassword(loginData.email, loginData.password);
-
-      // You can fetch user data from Firestore if needed
-      
-        const userDoc = await getDoc(doc(firestore, 'users', userCredential.user.uid));
-        // console.log(userDoc);
-      const userData  = userDoc.data();      
+      const userDoc = await getDoc(doc(firestore, 'users', userCredential.user.uid));
       window.alert('Login successful!');
       navigate('/');
 
