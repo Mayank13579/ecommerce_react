@@ -10,7 +10,7 @@ export  const ContactUs = () => {
     emailjs.sendForm('service_9evzq1i', 'template_bjb7cuj', form.current, 'zeXqHnwyk_c5OOjIk',{ 'Content-Type': 'application/json', 'scope': 'https://www.googleapis.com/auth/gmail.send' })
       .then((result) => {
           console.log(result.text);
-          console.log("message sent")
+         // console.log("message sent")
       }, (error) => {
           console.log(error.text);
       });

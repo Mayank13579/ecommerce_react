@@ -15,7 +15,9 @@ const Navbar = () => {
             <li><Link to='/kid'>KIDS</Link></li>
         </div>
         <div className='login'>
-            <button className='login-btn'><Link to='/login'>Login</Link></button>
+            <button className='login-btn'><Link to='/login'>Login/
+            <br />
+            Logout</Link></button>
             <Link to='/cart'><i  className="fa-solid fa-cart-shopping"></i></Link> 
             <Link to='/user'><i class="fa-solid fa-user"></i></Link>
             {/* <div className='nav-cart-count'>0</div> */}

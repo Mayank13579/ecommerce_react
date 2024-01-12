@@ -6,10 +6,12 @@ import remove_icon from '../../assets/cart_cross_icon.png'
 import {Link} from 'react-router-dom'
 
 
+
 const CartItems = (props) => {
 
-    console.log(props.passdata)
+   
     const {getTotalCartAmount,all_product,cartItems,removeFromCart}=useContext(ShopContext);
+
   return (
     <div className="cartitems">
         <div className="cartitems-format-main">
@@ -28,7 +30,9 @@ const CartItems = (props) => {
                     <img src={e.image} alt="" className='carticon-product-icon' />
                     <p>{e.name}</p>
                     <p>${e.new_price}</p>
+                    {/* <i onClick={increaseCart} class="fa-solid fa-plus"></i> */}
                     <button className='cartitems-quantity'>{cartItems[e.id]}</button>
+                    {/* <i onClick={decreaseCart} class="fa-solid fa-minus"></i> */}
                     <p>${e.new_price*cartItems[e.id]}</p>
                     <img className='cartitems-remove-icon' src={remove_icon} onClick={()=>{removeFromCart(e.id)}} alt="" />
                 </div>
