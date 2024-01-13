@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "ecommerce-react",
-  "root": "./frontend/src",
+  "root": "./",
   "builds": [
     {
       "src": "public/**/*",
