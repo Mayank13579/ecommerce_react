@@ -1,5 +1,14 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
-    ]
-  }
+  "version": 2,
+  "name": "ecommerce-react",
+  "root": "./frontend/src",
+  "builds": [
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
